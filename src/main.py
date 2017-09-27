@@ -56,7 +56,15 @@ def getMove(gameBoard):
             printBoard(gameBoard)
 
 def makeMove(gameBoard, move, p1Turn):
-    pass
+    # Parse out the move
+    row = move[0]
+    col = move[1]
+    
+    # Update the Game Board
+    if (p1Turn):
+        gameBoard[row][col] = 'X'
+    else:
+        gameBoard[row][col] = 'O'
 
 def checkGameOver(gameBoard):
     gameOver = True
@@ -97,6 +105,7 @@ def playGame(gameBoard):
             p1Turn = True
 
     print("GAME OVER")
+    printBoard(gameBoard)
     
 if __name__ == '__main__':
     gameBoard = [[0, 0, 0],[0, 0, 0],[0, 0, 0]]
